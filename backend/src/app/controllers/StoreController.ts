@@ -28,6 +28,14 @@ export class StoreController {
     return res.json(storeList);
   }
 
+  public async find(req: Request, res: Response) {
+    const { id } = req.params;
+
+    const store = await this.storeRepository.findOne(id);
+
+    return res.json(store);
+  }
+
   private validateFields(store: IStoreDTO) {
     if (!store.name || !store.owner) {
       return false;
