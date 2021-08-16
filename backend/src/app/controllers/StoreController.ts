@@ -53,6 +53,16 @@ export class StoreController {
     });
   }
 
+  public async remove(req: Request, res: Response) {
+    const { id } = req.params;
+
+    await this.storeRepository.delete(id);
+
+    return res.json({
+      message: "store deleted",
+    });
+  }
+
   private validateFields(store: IStoreDTO) {
     if (!store.name || !store.owner) {
       return false;
