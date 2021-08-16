@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { getCustomRepository } from "typeorm";
+import { Store } from "../database/models/Store";
 import { IStoreDTO } from "../dtos/IStoreDTO";
 import { StoreRepository } from "../repositories/StoreRepository";
 
