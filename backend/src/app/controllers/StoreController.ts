@@ -15,7 +15,15 @@ export class StoreController {
       });
     }
 
-    const store = await this.storeRepository.save(req.body);
+    await this.storeRepository.save(req.body);
+
+    return res.json({
+      message: "store created",
+    });
+  }
+
+  public async index(req: Request, res: Response) {
+    const storeList = await this.storeRepository.find();
 
     return res.json(store);
   }
