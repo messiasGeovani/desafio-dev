@@ -25,7 +25,7 @@ export class StoreController {
   public async index(req: Request, res: Response) {
     const storeList = await this.storeRepository.find();
 
-    return res.json(store);
+    return res.json(storeList);
   }
 
   private validateFields(store: IStoreDTO) {
