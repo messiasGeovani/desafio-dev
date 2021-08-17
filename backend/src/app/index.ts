@@ -16,6 +16,6 @@ export default class App {
   }
 
   private setRoutes() {
-    this.express.use(new Routes());
+    this.express.use(new Routes().routes);
   }
 }
