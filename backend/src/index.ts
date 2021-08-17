@@ -6,7 +6,10 @@ import {Request, Response} from "express";
 import {Routes} from "./routes";
 import {User} from "./entity/User";
 
-createConnection().then(async connection => {
+createConnection()
+  .then(() => {
+    const app = new App().express;
+    const port = process.env.PORT || 3000;
 
     // create express app
     const app = express();
