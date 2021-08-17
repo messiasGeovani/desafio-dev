@@ -1,10 +1,6 @@
 import "reflect-metadata";
-import {createConnection} from "typeorm";
-import * as express from "express";
-import * as bodyParser from "body-parser";
-import {Request, Response} from "express";
-import {Routes} from "./routes";
-import {User} from "./entity/User";
+import { createConnection } from "typeorm";
+import App from "./app";
 
 createConnection()
   .then(() => {
