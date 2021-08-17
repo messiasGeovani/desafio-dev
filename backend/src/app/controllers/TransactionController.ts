@@ -18,7 +18,7 @@ export class TransactionController {
     await this.transactionRepository.save(req.body);
 
     return res.json({
-      message: "transaction created",
+      message: "transaction saved",
     });
   }
 
