@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { StoreController } from "./app/controllers/StoreController";
+import { TransactionController } from "./app/controllers/TransactionController";
 
 export default class Routes {
   public routes;
