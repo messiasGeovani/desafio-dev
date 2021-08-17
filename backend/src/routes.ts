@@ -1,7 +1,9 @@
 import { Router } from "express";
+import { StoreController } from "./app/controllers/StoreController";
 
 export default class Routes {
   public routes;
+  private storeController = new StoreController();
 
   constructor() {
     this.routes = Router();
@@ -13,7 +15,7 @@ export default class Routes {
     const { routes } = this;
 
     routes.get("/store", (req, res) => {
-      return res.send("Ola");
+      this.storeController.index(req, res);
     });
   }
 }
