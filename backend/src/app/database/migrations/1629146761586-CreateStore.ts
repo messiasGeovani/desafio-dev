@@ -29,5 +29,7 @@ export class CreateStore1629146761586 implements MigrationInterface {
     );
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {}
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropTable(this.tablename);
+  }
 }
