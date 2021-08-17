@@ -63,5 +63,21 @@ export class TransactionController {
     });
   }
 
-  private validateFields(transaction: ITransactionDTO) {}
+  private validateFields(transaction: ITransactionDTO) {
+    const { type, date, value, cpf, hour } = transaction;
+
+    if (!type || !date || !value || !cpf || !hour) {
+      return false;
+    }
+
+    if (typeof value !== "number") {
+      return false;
+    }
+
+    if (!dayjs(date).isValid()) {
+      return false;
+    }
+
+    return true;
+  }
 }
