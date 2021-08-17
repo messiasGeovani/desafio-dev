@@ -11,6 +11,7 @@ export default class Routes {
     this.routes = Router();
 
     this.setStoreRoutes();
+    this.setTransactionRoutes();
   }
 
   private setStoreRoutes() {
