@@ -1,0 +1,15 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - ./temp/database:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  pgadmin-4:
+    image: dpage/pgadmin4
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres
