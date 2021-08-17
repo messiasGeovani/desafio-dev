@@ -18,4 +18,12 @@ export default class Routes {
       this.storeController.index(req, res);
     });
   }
+
+  private setTransactionRoutes() {
+    const { routes } = this;
+
+    routes.get("/transactions", (req, res) => {
+      this.transactionController.index(req, res);
+    });
+  }
 }
