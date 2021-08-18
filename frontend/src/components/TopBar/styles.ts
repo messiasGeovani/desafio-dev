@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
+import profileImg from "../../assets/profile-img.jpeg";
 
 export const ContentWrapper = styled.div`
   grid-area: TB;
@@ -20,7 +21,7 @@ export const ProfileInfoWrapper = styled.div`
 `;
 
 export const ProfileImage = styled(Image).attrs({
-  src: "https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png",
+  src: profileImg,
   height: 40,
   width: 40,
 })`
