@@ -1,4 +1,6 @@
+import { useCallback } from "react";
 import { useState } from "react";
+import { FileError, FileRejection, useDropzone } from "react-dropzone";
 import {
   Container,
   Title,
@@ -8,29 +10,67 @@ import {
   FileIcon,
 } from "./styles";
 
-export function UploadFileForm() {
-  const [file, setFile] = useState({ name: "teste.pdf" });
+export interface UplodableFile {
+  file: File;
+  errors: FileError[];
+}
 
-  const FileInfo = () =>
-    file.name && (
-      <FileWrapper>
+export function UploadFileForm() {
+  const [files, setFiles] = useState<UplodableFile[]>([]);
+
+  const onDrop = useCallback(
+    (acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
+      const mappedAccepted = acceptedFiles.map((file) => ({
+        file,
+        errors: [],
+      }));
+      setFiles((currentFiles) => ({
+        ...currentFiles,
+        ...mappedAccepted,
+        ...rejectedFiles,
+      }));
+    },
+    []
+  );
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: ".txt",
+  });
+
+  const FilesInfo = () =>
+    Object.values(files)?.map((fileWrapper, index) => (
+      <FileWrapper key={index}>
         <FileIcon />
-        <p>{file.name}</p>
+        <p>{fileWrapper.file.name}</p>
       </FileWrapper>
+    ));
+
+  const UploadMessage = () => {
+    if (isDragActive) {
+      return <p>Solte o arquivo aqui</p>;
+    }
+
+    return (
+      <p>
+        ou <span>importe manualmente</span>
+      </p>
     );
+  };
+
+  console.log("here", files);
 
   return (
     <Container>
       <Title>Upload de Transações:</Title>
       <div>
-        <FileInfo />
+        {FilesInfo()}
 
-        <UploadArea>
+        <UploadArea {...getRootProps()} isDragActive={isDragActive}>
+          <input {...getInputProps()} />
           <AddIcon />
           <strong>Arraste e solte</strong>
-          <p>
-            ou <span>importe manualmente</span>
-          </p>
+          <UploadMessage />
         </UploadArea>
       </div>
     </Container>
