@@ -35,7 +35,7 @@ export const Title = styled.h3`
   text-align: center;
 `;
 
-export const UploadArea = styled.div`
+export const UploadArea = styled.div<StyleProps>`
   width: 100%;
   padding: 25px;
   display: flex;
@@ -44,6 +44,7 @@ export const UploadArea = styled.div`
   justify-content: center;
   border-radius: 4px;
   border: 2px dashed lightgray;
+  cursor: pointer;
 
   > strong,
   > p {
@@ -53,7 +54,6 @@ export const UploadArea = styled.div`
 
   > p > span {
     color: blue;
-    cursor: pointer;
   }
 
   ${({ isDragActive }) => isDragActive && activeUploadAreaStyle}
@@ -72,6 +72,10 @@ export const FileWrapper = styled.div`
   margin-bottom: 20px;
 
   > p {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-weight: 600;
   }
 `;
