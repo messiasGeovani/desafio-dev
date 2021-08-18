@@ -3,6 +3,22 @@ import styled from "styled-components";
 import { NoteAdd } from "@styled-icons/material/NoteAdd";
 import { ContentCopy } from "@styled-icons/material-outlined/ContentCopy";
 
+interface StyleProps {
+  isDragActive: boolean;
+}
+
+const activeUploadAreaStyle = `
+  border-color: #a0afeb;
+
+  > strong, > svg {
+    color: #a0afeb;
+  }
+
+  > p {
+    color: #798ad1;
+  }
+`;
+
 export const Container = styled.div`
   width: 500px;
   padding: 30px;
@@ -39,6 +55,8 @@ export const UploadArea = styled.div`
     color: blue;
     cursor: pointer;
   }
+
+  ${({ isDragActive }) => isDragActive && activeUploadAreaStyle}
 `;
 
 export const AddIcon = styled(NoteAdd)`
