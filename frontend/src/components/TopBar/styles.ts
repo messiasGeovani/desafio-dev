@@ -10,6 +10,8 @@ export const ContentWrapper = styled.div`
 
   box-shadow: 2px 3px 6px lightgray;
 
+  z-index: 2;
+
   background: #fff;
 `;
 
