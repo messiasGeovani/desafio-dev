@@ -52,17 +52,6 @@ export class TransactionServices {
       )
     );
 
-    savedStores.map((store) =>
-      this.storeRepository.update(store.id, {
-        ...store,
-        transactions: Promise.resolve(
-          savedTransactions
-            .filter((transaction) => transaction.store.id === store.id)
-            .map(({ store: _, ...transaction }) => transaction)
-        ),
-      })
-    );
-
     return res.json({
       message: "transactions saved",
     });
