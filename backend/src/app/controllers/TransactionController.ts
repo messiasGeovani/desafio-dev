@@ -3,24 +3,22 @@ import { Request, Response } from "express";
 import { getCustomRepository } from "typeorm";
 import { ITransactionDTO } from "../dtos/ITransactionDTO";
 import { TransactionRepository } from "../repositories/TransactionRepository";
+import { TransactionServices } from "../services/TransactionServices";
 
 export class TransactionController {
   private transactionRepository = getCustomRepository(TransactionRepository);
+  private transactionServices = new TransactionServices();
 
-  public async create(req: Request, res: Response) {
-    const isValidStore = this.validateFields(req.body);
+  public create(req: Request, res: Response) {
+    const isValidTransactionFile = req.files || req.files.document;
 
-    if (!isValidStore) {
+    if (!isValidTransactionFile) {
       return res.status(400).json({
-        message: "invalid fields",
+        message: "invalid file",
       });
     }
 
-    await this.transactionRepository.save(req.body);
-
-    return res.json({
-      message: "transaction saved",
-    });
+    this.transactionServices.save(req.files.document, res);
   }
 
   public async index(req: Request, res: Response) {
