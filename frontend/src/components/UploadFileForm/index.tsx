@@ -83,7 +83,6 @@ export function UploadFileForm() {
       <Title>Upload de Transações:</Title>
       <div>
         {FilesInfo()}
-
         <UploadArea {...getRootProps()} isDragActive={isDragActive}>
           <input {...getInputProps()} />
           <AddIcon />
