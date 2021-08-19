@@ -46,10 +46,12 @@ export class TransactionController {
       });
     }
 
-    await this.transactionRepository.update(id, req.body);
-
-    return res.json({
-      message: "transaction updated",
+    const transactions = await this.transactionRepository.find({
+      where: {
+        store: {
+          id: storeId,
+        },
+      },
     });
   }
 
