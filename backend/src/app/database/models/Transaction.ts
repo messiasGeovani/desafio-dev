@@ -17,6 +17,9 @@ export class Transaction {
   @Column()
   cpf: string;
 
+  @Column({ name: "card_number" })
+  cardNumber: string;
+
   @Column({ name: "transaction_hour" })
   hour: string;
 }
