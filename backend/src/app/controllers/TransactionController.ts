@@ -53,12 +53,6 @@ export class TransactionController {
         },
       },
     });
-  }
-
-  public async remove(req: Request, res: Response) {
-    const { id } = req.params;
-
-    await this.transactionRepository.delete(id);
 
     return res.json(transactions);
   }
