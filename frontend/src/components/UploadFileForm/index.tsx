@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { useState } from "react";
 import { FileError, FileRejection, useDropzone } from "react-dropzone";
+import { sendTransactionsFile } from "../../services/api";
 import {
   Container,
   Title,
@@ -40,6 +41,20 @@ export function UploadFileForm() {
     multiple: false,
   });
 
+  const handleUploadFile = async () => {
+    const filesArray = Object.values(files);
+
+    console.log("dispatch");
+
+    if (!filesArray.length) {
+      return;
+    }
+
+    const { status, data } = await sendTransactionsFile(
+      filesArray[filesArray.length - 1].file
+    );
+  };
+
   const FilesInfo = () => {
     const filesArray = Object.values(files);
     if (!filesArray.length) {
@@ -71,11 +86,14 @@ export function UploadFileForm() {
   };
 
   const SubmitButton = () => {
-    if (!Object.values(files)?.length) {
+    const filesArray = Object.values(files);
+    if (!filesArray.length) {
       return <span />;
     }
 
-    return <UploadButton>Enviar arquivo</UploadButton>;
+    return (
+      <UploadButton onClick={handleUploadFile}>Enviar arquivo</UploadButton>
+    );
   };
 
   return (
