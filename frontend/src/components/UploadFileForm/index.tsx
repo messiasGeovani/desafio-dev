@@ -37,15 +37,26 @@ export function UploadFileForm() {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: ".txt",
+    multiple: false,
   });
 
-  const FilesInfo = () =>
-    Object.values(files)?.map((fileWrapper, index) => (
-      <FileWrapper key={index}>
-        <FileIcon />
-        <p>{fileWrapper.file.name}</p>
-      </FileWrapper>
-    ));
+  const FilesInfo = () => {
+    const filesArray = Object.values(files);
+    if (!filesArray.length) {
+      return;
+    }
+
+    return (
+      <>
+        {filesArray?.map((fileWrapper, index) => (
+          <FileWrapper key={index}>
+            <FileIcon />
+            <p>{fileWrapper.file.name}</p>
+          </FileWrapper>
+        ))}
+      </>
+    );
+  };
 
   const UploadMessage = () => {
     if (isDragActive) {
