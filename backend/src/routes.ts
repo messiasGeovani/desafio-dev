@@ -28,5 +28,13 @@ export default class Routes {
     routes.get("/transactions", (req, res) => {
       this.transactionController.index(req, res);
     });
+
+    routes.get("/transactions/:storeId", (req, res) => {
+      this.transactionController.indexByStore(req, res);
+    });
+
+    routes.post("/transactions", (req, res) => {
+      this.transactionController.create(req, res);
+    });
   }
 }
