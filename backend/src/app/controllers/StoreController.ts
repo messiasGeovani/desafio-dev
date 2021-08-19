@@ -36,33 +36,6 @@ export class StoreController {
     return res.json(store);
   }
 
-  public async edit(req: Request, res: Response) {
-    const { id } = req.params;
-    const isValidFields = this.validateFields(req.body);
-
-    if (!isValidFields) {
-      return res.status(400).json({
-        message: "invalid fields",
-      });
-    }
-
-    await this.storeRepository.update(id, req.body);
-
-    return res.json({
-      message: "store updated",
-    });
-  }
-
-  public async remove(req: Request, res: Response) {
-    const { id } = req.params;
-
-    await this.storeRepository.delete(id);
-
-    return res.json({
-      message: "store deleted",
-    });
-  }
-
   private validateFields(store: IStoreDTO) {
     if (!store.name || !store.owner) {
       return false;
