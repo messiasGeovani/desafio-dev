@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Transaction } from "./Transaction";
 
 @Entity()
 export class Store {
@@ -10,4 +11,7 @@ export class Store {
 
   @Column({ name: "store_owner" })
   owner: string;
+
+  @OneToMany((type) => Transaction, (store) => Store)
+  transactions: Promise<Transaction[]>;
 }
