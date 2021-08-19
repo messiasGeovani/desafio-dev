@@ -60,9 +60,7 @@ export class TransactionController {
 
     await this.transactionRepository.delete(id);
 
-    return res.json({
-      message: "transaction deleted",
-    });
+    return res.json(transactions);
   }
 
   private validateFields(transaction: ITransactionDTO) {
