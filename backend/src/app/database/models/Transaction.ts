@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Store } from "./Store";
 
 @Entity()
 export class Transaction {
@@ -22,4 +23,7 @@ export class Transaction {
 
   @Column({ name: "transaction_hour" })
   hour: string;
+
+  @ManyToOne((type) => Store, (transactions) => Transaction, { eager: true })
+  store: Store;
 }
