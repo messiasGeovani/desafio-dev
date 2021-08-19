@@ -37,9 +37,8 @@ export class TransactionController {
     return res.json(transaction);
   }
 
-  public async edit(req: Request, res: Response) {
-    const { id } = req.params;
-    const isValidFields = this.validateFields(req.body);
+  public async indexByStore(req: Request, res: Response) {
+    const { storeId } = req.params;
 
     if (!isValidFields) {
       return res.status(400).json({
