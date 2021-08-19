@@ -40,9 +40,9 @@ export class TransactionController {
   public async indexByStore(req: Request, res: Response) {
     const { storeId } = req.params;
 
-    if (!isValidFields) {
+    if (!storeId) {
       return res.status(400).json({
-        message: "invalid fields",
+        message: "store id is required",
       });
     }
 
