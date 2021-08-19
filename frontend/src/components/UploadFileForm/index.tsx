@@ -8,6 +8,7 @@ import {
   AddIcon,
   FileWrapper,
   FileIcon,
+  UploadButton,
 } from "./styles";
 
 export interface UplodableFile {
@@ -58,7 +59,13 @@ export function UploadFileForm() {
     );
   };
 
-  console.log("here", files);
+  const SubmitButton = () => {
+    if (!Object.values(files)?.length) {
+      return <span />;
+    }
+
+    return <UploadButton>Enviar arquivo</UploadButton>;
+  };
 
   return (
     <Container>
