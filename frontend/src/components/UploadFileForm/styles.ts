@@ -88,3 +88,20 @@ export const FileIcon = styled(ContentCopy)`
 
   color: #5a56a0;
 `;
+
+export const UploadButton = styled.button`
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+  color: white;
+  background: #798ad1;
+  cursor: pointer;
+
+  &:hover {
+    background: #5666a5;
+  }
+`;
