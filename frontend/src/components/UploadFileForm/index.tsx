@@ -79,6 +79,7 @@ export function UploadFileForm() {
           <strong>Arraste e solte</strong>
           <UploadMessage />
         </UploadArea>
+        <SubmitButton />
       </div>
     </Container>
   );
