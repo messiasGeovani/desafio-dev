@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getCustomRepository } from "typeorm";
+import { getCustomRepository, Like } from "typeorm";
 import { IStoreDTO } from "../dtos/IStoreDTO";
 import { StoreRepository } from "../repositories/StoreRepository";
 
@@ -34,6 +34,18 @@ export class StoreController {
     const store = await this.storeRepository.findOne(id);
 
     return res.json(store);
+  }
+
+  public async search(req: Request, res: Response) {
+    const { name } = req.params;
+
+    const storeList = await this.storeRepository.find({
+      where: {
+        name: Like(`%${name.toUpperCase()}%`),
+      },
+    });
+
+    return res.json(storeList);
   }
 
   private validateFields(store: IStoreDTO) {
