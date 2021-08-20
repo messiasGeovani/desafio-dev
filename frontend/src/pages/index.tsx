@@ -1,3 +1,5 @@
+import { AuthValidator } from "../components/AuthValidator";
+
 export default function Home() {
-  return <div>ola</div>;
+  return <AuthValidator />;
 }
