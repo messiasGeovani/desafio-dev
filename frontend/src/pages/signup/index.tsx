@@ -3,7 +3,12 @@ import { SignForm } from "../../components/SignForm";
 import { login, signUp } from "../../services/api";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getUser, setUser } from "../../store/reducers/userReducer";
-import { Container, ContentWrapper, Banner, FormWrapper } from "./styles";
+import {
+  Container,
+  ContentWrapper,
+  Banner,
+  FormWrapper,
+} from "../../styles/pages/signupStyles";
 
 export default function SignUp() {
   const dispatch = useAppDispatch();

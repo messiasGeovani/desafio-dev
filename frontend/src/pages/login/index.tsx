@@ -4,7 +4,12 @@ import { SignForm } from "../../components/SignForm";
 import { login } from "../../services/api";
 import { useAppSelector } from "../../store/hooks";
 import { getUser, setUser } from "../../store/reducers/userReducer";
-import { Container, ContentWrapper, Banner, FormWrapper } from "./styles";
+import {
+  Container,
+  ContentWrapper,
+  Banner,
+  FormWrapper,
+} from "../../styles/pages/loginStyles";
 
 export default function Login() {
   const dispatch = useDispatch();
