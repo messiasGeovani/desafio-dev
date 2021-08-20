@@ -1,13 +1,16 @@
 import { Router } from "express";
+import { AuthController } from "./app/controllers/AuthController";
 import { StoreController } from "./app/controllers/StoreController";
 import { TransactionController } from "./app/controllers/TransactionController";
 import { UserController } from "./app/controllers/UserController";
+import authMiddleware from "./app/middlewares/authMiddleware";
 
 export default class Routes {
   public routes;
   private storeController = new StoreController();
   private transactionController = new TransactionController();
   private userController = new UserController();
+  private authController = new AuthController();
 
   constructor() {
     this.routes = Router();
@@ -15,16 +18,17 @@ export default class Routes {
     this.setStoreRoutes();
     this.setTransactionRoutes();
     this.setUserRoutes();
+    this.setAuthRoutes();
   }
 
   private setStoreRoutes() {
     const { routes } = this;
 
-    routes.get("/store", (req, res) => {
+    routes.get("/store", authMiddleware, (req, res) => {
       this.storeController.index(req, res);
     });
 
-    routes.get("/store/:name", (req, res) => {
+    routes.get("/store/:name", authMiddleware, (req, res) => {
       this.storeController.search(req, res);
     });
   }
@@ -32,15 +36,15 @@ export default class Routes {
   private setTransactionRoutes() {
     const { routes } = this;
 
-    routes.get("/transactions", (req, res) => {
+    routes.get("/transactions", authMiddleware, (req, res) => {
       this.transactionController.index(req, res);
     });
 
-    routes.get("/transactions/:storeId", (req, res) => {
+    routes.get("/transactions/:storeId", authMiddleware, (req, res) => {
       this.transactionController.indexByStore(req, res);
     });
 
-    routes.post("/transactions", (req, res) => {
+    routes.post("/transactions", authMiddleware, (req, res) => {
       this.transactionController.create(req, res);
     });
   }
@@ -52,12 +56,20 @@ export default class Routes {
       this.userController.create(req, res);
     });
 
-    routes.get("/users", (req, res) => {
+    routes.get("/users", authMiddleware, (req, res) => {
       this.userController.index(req, res);
     });
 
-    routes.get("/users/:id", (req, res) => {
+    routes.get("/users/:id", authMiddleware, (req, res) => {
       this.userController.find(req, res);
+    });
+  }
+
+  private setAuthRoutes() {
+    const { routes } = this;
+
+    routes.post("/auth", (req, res) => {
+      this.authController.authenticate(req, res);
     });
   }
 }
