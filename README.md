@@ -1,9 +1,10 @@
 # ByCoders Challenge: Frontend
+
 > A CNAB files upload platform maded with NextJS, Express, Typeorm and Typescript.
 
 ## Development Manual
 
-* ### Instalation
+- ### Instalation
 
 Before starting the installation, check if you have [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) installed on your machine.
 
@@ -19,12 +20,12 @@ sudo ./run.sh
 
 Lastly, start the frontend project, see how to do [here](./frontend/README.md).
 
-* ### [Frontent project](./frontend)
-* ### [Api](./backend)
+- ### [Frontent project](./frontend)
+- ### [Api](./backend)
 
 ## Meta
 
-Linkedin Profile – [Messias Geovani](https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D) 
+Linkedin Profile – [Messias Geovani](https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D)
 
 Email – messias.geovani.lima@gmail.com
 
@@ -32,7 +33,7 @@ Github profile – [messiasGeovani](https://github.com/messiasGeovani)
 
 ## Contributing
 
-1. Fork it (<https://github.com/messiasGeovani/bycoders-challenge/fork>)
+1. Fork it (<https://github.com/messiasGeovani/desafio-dev/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
