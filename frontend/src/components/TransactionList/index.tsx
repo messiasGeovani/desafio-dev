@@ -15,9 +15,9 @@ import { formatToCPF } from "../../utils/formatToCPF";
 let transactionListInputTimer = null;
 
 interface Store {
-  id: string;
-  name: string;
-  owner: string;
+  id?: string;
+  name?: string;
+  owner?: string;
 }
 
 interface Transaction {
@@ -34,7 +34,7 @@ export function TransactionList() {
   const [storeList, setStoreList] = useState<Store[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [searchText, setSearchText] = useState<string>("");
-  const [selectedStore, setSelectedStore] = useState<Store>();
+  const [selectedStore, setSelectedStore] = useState<Store>({});
 
   const fetchStore = async (value: string) => {
     const isAlreadySearched =
@@ -44,7 +44,7 @@ export function TransactionList() {
       );
 
     if (isAlreadySearched.length > 0) {
-      return setSearchText("");
+      return;
     }
 
     const { status, data } = await getStoreList(value);
@@ -54,7 +54,6 @@ export function TransactionList() {
     }
 
     setStoreList(Array.from(new Set([...storeList, ...data])));
-    setSearchText("");
     console.log("store list", storeList);
   };
 
@@ -74,7 +73,7 @@ export function TransactionList() {
 
     clearTimeout(transactionListInputTimer);
 
-    setSelectedStore(null);
+    setSelectedStore({});
     setSearchText(event.target.value);
 
     transactionListInputTimer = setTimeout(
