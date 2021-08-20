@@ -1,0 +1,23 @@
+version: "3"
+services:
+  api:
+    build: ./backend
+    depends_on:
+      - postgres
+    volumes:
+      - ./backend:/home/api
+      - ./backend/node_modules:/home/api/node_modules
+    ports:
+      - "3000:3000"
+
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+
+  pgadmin-4:
+    image: dpage/pgadmin4
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres
