@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
-import profileImg from "../../assets/profile-img.jpeg";
+import profileImg from "../../assets/profile-img.png";
 
 export const ContentWrapper = styled.div`
   grid-area: TB;
