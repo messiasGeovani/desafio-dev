@@ -1,7 +1,7 @@
 # ByCoders Challende: Frontend
 > A CNAB files upload platform maded with NextJS and Typescript.
 
-<img src="./assets/screenshot.gif">
+<img src="./src/assets/screenshot.gif">
 
 ## Development Manual
 
