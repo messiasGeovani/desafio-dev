@@ -11,10 +11,19 @@ This project was made with the React framework <b>[NextJS](https://nextjs.org/)<
 
 - <b>[Typescript](https://www.typescriptlang.org/)</b>: The javascript superset that allows us to use the latest Ecmascript features, in addition to being compiled and having strong typing, giving us more stability and clarity.
 
+- <b>[Eslint](https://eslint.org/)</b>: Used to check syntax and find problems with code pattern.
+
 - <b>[Styled-components](https://styled-components.com/)</b>: A css-in-js library that allows us to style components in a simple way, in addition to being able to pass properties into the style, making it reactive.
+
+- <b>[Styled Icons](https://styled-icons.js.org/)</b>: This library was used to work with icons.
 
 - <b>[Redux](https://redux.js.org/)</b>: This library allows us to manage global states within the application.
 
+- <b>[Axios](https://github.com/axios/axios)</b>: This library allows us do requests on backend api.
+
+- <b>[DayJS](https://day.js.org/)</b>: Used to work with dates info.
+
+- <b>[React Dropzone](https://react-dropzone.js.org/)</b>: Used to do the drag-and-drop files functionality.
 
 ---
 
