@@ -43,6 +43,8 @@ To start the project on development mode, run:
 yarn dev
 ```
 
+The url to access the application is http://localhost:8000
+
 ---
 
 * ### Project Structure
