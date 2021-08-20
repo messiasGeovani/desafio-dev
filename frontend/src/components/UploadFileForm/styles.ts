@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { NoteAdd } from "@styled-icons/material/NoteAdd";
 import { ContentCopy } from "@styled-icons/material-outlined/ContentCopy";
+import { fadeAnimation, moveAnimation } from "../../styles/animations";
 
 interface StyleProps {
   isDragActive: boolean;
@@ -26,6 +27,8 @@ export const Container = styled.div`
   box-shadow: 2px 2px 6px #dbdbdb;
 
   background: #fff;
+
+  animation: ${fadeAnimation} linear 0.2s, ${moveAnimation} 0.2s backwards;
 `;
 
 export const Title = styled.h3`
