@@ -14,6 +14,22 @@ import { formatToCPF } from "../../utils/formatToCPF";
 
 let transactionListInputTimer = null;
 
+interface Store {
+  id: string;
+  name: string;
+  owner: string;
+}
+
+interface Transaction {
+  id: string;
+  type: string;
+  date: Date;
+  value: number;
+  cpf: string;
+  cardNumber: string;
+  hour: string;
+}
+
 export function TransactionList() {
   const [storeList, setStoreList] = useState([]);
   const [transactions, setTransactions] = useState([]);
