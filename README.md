@@ -1,7 +1,5 @@
 # ByCoders Challenge: Frontend
-> A CNAB files upload platform maded with NextJS and Typescript.
-
-<img src="./src/assets/screenshot.gif">
+> A CNAB files upload platform maded with NextJS, Express, Typeorm and Typescript.
 
 ## Development Manual
 
