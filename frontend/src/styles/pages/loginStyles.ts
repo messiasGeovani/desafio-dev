@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styled from "styled-components";
-import bannerSignUpImg from "../../assets/banner-signup.png";
+import bannerImg from "../../assets/banner.png";
 
 export const Container = styled.div`
   height: 100vh;
@@ -13,20 +13,16 @@ export const Container = styled.div`
 export const ContentWrapper = styled.div`
   width: 70%;
   height: 70%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 50px 40px;
-
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.25);
-
   background: white;
 `;
 
 export const Banner = styled(Image).attrs({
-  src: bannerSignUpImg,
+  src: bannerImg,
 })``;
 
 export const FormWrapper = styled.div`
