@@ -20,6 +20,7 @@ sudo ./run.sh
 Lastly, start the frontend project, see how to do [here](./frontend/README.md).
 
 * ### [Frontent project](./frontend)
+* ### [Api](./backend)
 
 ## Meta
 
