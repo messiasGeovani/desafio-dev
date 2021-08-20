@@ -31,10 +31,10 @@ interface Transaction {
 }
 
 export function TransactionList() {
-  const [storeList, setStoreList] = useState([]);
-  const [transactions, setTransactions] = useState([]);
-  const [searchText, setSearchText] = useState("");
-  const [selectedStore, setSelectedStore] = useState({});
+  const [storeList, setStoreList] = useState<Store[]>([]);
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [searchText, setSearchText] = useState<string>("");
+  const [selectedStore, setSelectedStore] = useState<Store>();
 
   const fetchStore = async (value: string) => {
     const isAlreadySearched =
