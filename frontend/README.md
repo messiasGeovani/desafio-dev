@@ -1,38 +1,141 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ByCoders Challende: Frontend
+> A CNAB files upload platform maded with NextJS and Typescript.
 
-## Getting Started
+<img src="./assets/screenshot.gif">
 
-First, run the development server:
+## Development Manual
 
-```bash
-npm run dev
-# or
+This project was made with the React framework <b>[NextJS](https://nextjs.org/)</b> together with the following technologies:
+
+- <b>[Yarn](https://yarnpkg.com/)</b>: Yarn is a faster and more secure package manager than the standard NodeJS package manager.
+
+- <b>[Typescript](https://www.typescriptlang.org/)</b>: The javascript superset that allows us to use the latest Ecmascript features, in addition to being compiled and having strong typing, giving us more stability and clarity.
+
+- <b>[Eslint](https://eslint.org/)</b>: Used to check syntax and find problems with code pattern.
+
+- <b>[Styled-components](https://styled-components.com/)</b>: A css-in-js library that allows us to style components in a simple way, in addition to being able to pass properties into the style, making it reactive.
+
+- <b>[Styled Icons](https://styled-icons.js.org/)</b>: This library was used to work with icons.
+
+- <b>[Redux](https://redux.js.org/)</b>: This library allows us to manage global states within the application.
+
+- <b>[Axios](https://github.com/axios/axios)</b>: This library allows us do requests on backend api.
+
+- <b>[DayJS](https://day.js.org/)</b>: Used to work with dates info.
+
+- <b>[React Dropzone](https://react-dropzone.js.org/)</b>: Used to do the drag-and-drop files functionality.
+
+---
+
+* ### Instalation
+
+Before starting the installation, create an .env file at the root of the project with the following according to the variables in the .env.local.sample file.
+
+After, run the following command:
+
+```sh
+yarn build && yarn start
+```
+
+To start the project on development mode, run:
+
+```sh
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+* ### Project Structure
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
+├── next.config.js
+├── next-env.d.ts
+├── package.json
+├── README.md
+├── src
+│   ├── assets
+│   │   ├── banner.png
+│   │   ├── banner-signup.png
+│   │   ├── profile-img.jpeg
+│   │   └── profile-img.png
+│   ├── components
+│   │   ├── AuthValidator
+│   │   │   └── index.tsx
+│   │   ├── Content
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   ├── Loading
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   ├── SideBar
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   ├── SignForm
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   ├── TopBar
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   ├── TransactionList
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   └── UploadFileForm
+│   │       ├── index.tsx
+│   │       └── styles.ts
+│   ├── context
+│   │   └── Content.tsx
+│   ├── pages
+│   │   ├── _app.tsx
+│   │   ├── _document.tsx
+│   │   ├── home
+│   │   │   └── index.tsx
+│   │   ├── index.tsx
+│   │   ├── login
+│   │   │   └── index.tsx
+│   │   └── signup
+│   │       └── index.tsx
+│   ├── public
+│   │   ├── favicon.ico
+│   │   └── vercel.svg
+│   ├── services
+│   │   └── api.ts
+│   ├── store
+│   │   ├── hooks.ts
+│   │   ├── index.ts
+│   │   └── reducers
+│   │       └── userReducer.ts
+│   ├── styles
+│   │   ├── animations.ts
+│   │   ├── GlobalStyles.ts
+│   │   ├── pages
+│   │   │   ├── homeStyles.ts
+│   │   │   ├── loginStyles.ts
+│   │   │   └── signupStyles.ts
+│   │   └── theme.ts
+│   └── utils
+│       ├── formatToCPF.ts
+│       └── formatValue.ts
+├── styled.d.ts
+├── tsconfig.json
+└── yarn.lock
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Banners credits
 
-## Learn More
+Author - [Abstract Vector](https://www.freepik.com/vectors/abstract)
 
-To learn more about Next.js, take a look at the following resources:
+## Meta
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Linkedin Profile – [Messias Geovani](https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D) 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Email – messias.geovani.lima@gmail.com
 
-## Deploy on Vercel
+Github profile – [messiasGeovani](https://github.com/messiasGeovani)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Sign page banner credits
-
-[Abstract Vector](https://www.freepik.com/vectors/abstract)
+1. Fork it (<https://github.com/messiasGeovani/bycoders-challenge/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
