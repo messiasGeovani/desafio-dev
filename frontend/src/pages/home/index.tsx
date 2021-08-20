@@ -5,7 +5,7 @@ import { Content } from "../../components/Content";
 import ContentProvider from "../../context/Content";
 import { AuthValidator } from "../../components/AuthValidator";
 
-import { Grid } from "./styles";
+import { Grid } from "../../styles/pages/homeStyles";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getUser } from "../../store/reducers/userReducer";
 import { useEffect } from "react";
