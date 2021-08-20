@@ -19,12 +19,13 @@
     "dayjs": "^1.10.6",
     "express": "^4.15.4",
     "express-fileupload": "^1.2.1",
+    "jsonwebtoken": "^8.5.1",
     "pg": "^8.4.0",
     "reflect-metadata": "^0.1.10",
     "typeorm": "0.2.36"
   },
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts"
+    "start": "ts-node --files src/index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts"
   }
 }
