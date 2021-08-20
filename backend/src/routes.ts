@@ -20,6 +20,10 @@ export default class Routes {
     routes.get("/store", (req, res) => {
       this.storeController.index(req, res);
     });
+
+    routes.get("/store/:name", (req, res) => {
+      this.storeController.search(req, res);
+    });
   }
 
   private setTransactionRoutes() {
