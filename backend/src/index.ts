@@ -9,4 +9,4 @@ createConnection()
 
     app.listen(port, () => console.log(`server running on ${port}...`));
   })
-  .catch((error) => console.log(error));
+  .catch((err) => console.log("Database connection error", err));
