@@ -1,3 +1,5 @@
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { getUser } from "../../store/reducers/userReducer";
 import {
   ContentWrapper,
   ProfileInfoWrapper,
@@ -6,11 +8,14 @@ import {
 } from "./styles";
 
 export function TopBar() {
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector(getUser);
+
   return (
     <ContentWrapper>
       <ProfileInfoWrapper>
         <ProfileImage />
-        <ProfileName>Messias Geovani</ProfileName>
+        <ProfileName>{user.name}</ProfileName>
       </ProfileInfoWrapper>
     </ContentWrapper>
   );
