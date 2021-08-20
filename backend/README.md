@@ -25,14 +25,14 @@ To consume the following routes, it's necessary to be authenticated, sending an 
 |---|---|---|---|---|---|
 | POST | /transactions | register a new companion | document: file | true | empty |
 | GET | /transactions | show all transactions | empty | true | Transaction Schema List
-| GET | /transactions/:storeID | get store transactions | no body required | true | Transaction Schema List |
+| GET | /transactions/:storeID | get store transactions | empty | true | Transaction Schema List |
 
 ### Store Routes
 
 | Method | Route | Functionality | Body Data | Auth Required | Content Return |
 |---|---|---|---|---|---|
 | GET | /store | show all store | empty | true | Store Schema List |
-| GET | /store/:name | search store by name | no body required | true | Store Schema List |
+| GET | /store/:name | search store by name | empty | true | Store Schema List |
 
 ---
 
