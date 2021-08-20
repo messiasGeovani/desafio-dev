@@ -53,8 +53,11 @@ export function TransactionList() {
       return;
     }
 
+    if (!data.length) {
+      alert("Nenhuma transação encontrada");
+    }
+
     setStoreList(Array.from(new Set([...storeList, ...data])));
-    console.log("store list", storeList);
   };
 
   const handleSearchInput = (event) => {
