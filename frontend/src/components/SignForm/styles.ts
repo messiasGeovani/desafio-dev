@@ -25,7 +25,7 @@ export const Title = styled.h2`
   color: #5a56a0;
 `;
 
-export const InputsWrapper = styled.div`
+export const InputsWrapper = styled.form`
   width: 100%;
   > div + div {
     margin-top: 17px;
