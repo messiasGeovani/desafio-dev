@@ -2,12 +2,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../";
 
 export type UserState = {
+  id: string;
   name: string;
   email: string;
   token: string;
 };
 
 const initialState: UserState = {
+  id: "",
   name: "",
   email: "",
   token: "",
@@ -18,16 +20,16 @@ export const user = createSlice({
   initialState,
   reducers: {
     setUser: (state, action: PayloadAction<UserState>) => {
-      state = action.payload;
+      return action.payload;
     },
     removeUser: (state) => {
-      state = { name: "", email: "", token: "" };
+      state = { id: "", name: "", email: "", token: "" };
     },
   },
 });
 
 export const { setUser, removeUser } = user.actions;
 
-export const selectUser = (state: RootState) => state;
+export const getUser = (state: RootState) => state;
 
 export default user.reducer;
