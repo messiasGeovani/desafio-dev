@@ -1,7 +1,9 @@
+import { useRouter } from "next/dist/client/router";
 import { useCallback } from "react";
 import { useState } from "react";
 import { FileError, FileRejection, useDropzone } from "react-dropzone";
 import { sendTransactionsFile } from "../../services/api";
+import { Loading } from "../Loading";
 import {
   Container,
   Title,
@@ -19,6 +21,7 @@ export interface UplodableFile {
 
 export function UploadFileForm() {
   const [files, setFiles] = useState<UplodableFile[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const onDrop = useCallback(
     (acceptedFiles: File[], rejectedFiles: FileRejection[]) => {
@@ -41,18 +44,27 @@ export function UploadFileForm() {
     multiple: false,
   });
 
-  const handleUploadFile = async () => {
+  const handleUploadFile = async (event) => {
     const filesArray = Object.values(files);
 
-    console.log("dispatch");
+    event.preventDefault();
+    setLoading(true);
 
     if (!filesArray.length) {
-      return;
+      return setLoading(false);
     }
 
     const { status, data } = await sendTransactionsFile(
       filesArray[filesArray.length - 1].file
     );
+
+    if (status !== 200) {
+      alert("Erro ao fazer upload");
+    }
+
+    setLoading(false);
+    alert("Upload Realizado");
+    setFiles([]);
   };
 
   const FilesInfo = () => {
@@ -91,15 +103,14 @@ export function UploadFileForm() {
       return <span />;
     }
 
-    return (
-      <UploadButton onClick={handleUploadFile}>Enviar arquivo</UploadButton>
-    );
+    return <UploadButton type="submit">Fazer Upload</UploadButton>;
   };
 
   return (
     <Container>
+      <Loading isActive={loading} />
       <Title>Upload de Transações:</Title>
-      <div>
+      <form onSubmit={handleUploadFile}>
         {FilesInfo()}
         <UploadArea {...getRootProps()} isDragActive={isDragActive}>
           <input {...getInputProps()} />
@@ -108,7 +119,7 @@ export function UploadFileForm() {
           <UploadMessage />
         </UploadArea>
         <SubmitButton />
-      </div>
+      </form>
     </Container>
   );
 }
