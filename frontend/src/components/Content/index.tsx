@@ -10,7 +10,11 @@ export function Content() {
       return <UploadFileForm />;
     }
 
-    return <TransactionList />;
+    if (currentTab === "list") {
+      return <TransactionList />;
+    }
+
+    return <div>Em breve...</div>;
   };
   return (
     <Container>
