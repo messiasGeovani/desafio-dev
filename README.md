@@ -19,6 +19,8 @@ sudo ./run.sh
 
 Lastly, start the frontend project, see how to do [here](./frontend/README.md).
 
+* ### [Frontent project](./frontend)
+
 ## Meta
 
 Linkedin Profile – [Messias Geovani](https://www.linkedin.com/in/messias-geovani-00125416a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGnSoFwiETD%2BtGrv4dF9mSw%3D%3D) 
