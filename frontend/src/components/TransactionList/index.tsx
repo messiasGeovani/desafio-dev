@@ -93,7 +93,7 @@ export function TransactionList() {
     const { status, data } = await getTransactions(selectedStore.id);
 
     if (status !== 200) {
-      alert("Erro ao pesquisar transações");
+      alert("Erro ao pesquisar");
     }
 
     setTransactions(data);
