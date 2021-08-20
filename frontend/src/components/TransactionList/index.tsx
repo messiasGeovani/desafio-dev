@@ -74,7 +74,7 @@ export function TransactionList() {
 
     clearTimeout(transactionListInputTimer);
 
-    setSelectedStore({});
+    setSelectedStore(null);
     setSearchText(event.target.value);
 
     transactionListInputTimer = setTimeout(
